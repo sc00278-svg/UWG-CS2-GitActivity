@@ -10,6 +10,10 @@ import java.util.ArrayList;
 public class Bill {
 	private ArrayList<BillItem> items;
 	
+	final double TAX_PERCENTAGE;
+	
+	final double TIP_PERCENTAGE;
+	
 	/** Create a new empty Bill
 	 * 
 	 * @precondition none
@@ -51,8 +55,8 @@ public class Bill {
 		
 		text += System.lineSeparator();
 		text += "SUBTOTAL - $" + subTotal + System.lineSeparator();
-		double tax = subTotal * 0.1;
-		double tip = subTotal * 0.2;
+		double tax = subTotal * this.TAX_PERCENTAGE;
+		double tip = subTotal * this.TIP_PERCENTAGE;
 		text += "TAX - $" + tax + System.lineSeparator();
 		text += "TIP - $" + tip + System.lineSeparator();
 		text += "TOTAL - $" + (subTotal + tip + tax);
