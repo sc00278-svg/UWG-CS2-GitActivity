@@ -1,4 +1,4 @@
-package edu.westga.cs1302.javafx_sample_starter.views;
+package edu.westga.cs1302.javafx_sample_starter_lab3.views;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

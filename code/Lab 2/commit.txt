@@ -1,0 +1,53 @@
+commit c4c8f23282ac71db92cd4cc94e274360c809e5b0
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Sep 4 07:19:41 2025 -0400
+
+    Lab 2 TestBillAddItem
+    
+    1) created TestBillAddItem class in the tests package of lab 2.
+    2) added tests to TestBillAddItem
+
+commit 01f97d302c4c386d43846fc43e38d83495c0adf3
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Sep 3 19:44:17 2025 -0400
+
+    TestBillItem
+    
+    1) added tests in the TestBillItem test class for lab 2
+
+commit 695ec6ed782f8609733e462550781a04df228e84
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Aug 28 12:30:13 2025 -0400
+
+    adding file to code
+    
+    added the JavaFX sample project
+    added the lab 2
+
+commit d80bf93f54b6689eab2d4eb9dece991ccffca713
+Author: sc00278-svg <sc00278@my.westga.edu>
+Date:   Thu Aug 21 12:17:17 2025 -0400
+
+    Adding Lab 1
+    
+    1) added the starter file for lab 1
+
+commit ec48ae07834e2c3ce0ccee5c055229323340d46f
+Author: sc00278-svg <sc00278@my.westga.edu>
+Date:   Thu Aug 21 10:31:23 2025 -0400
+
+    Adding base project
+    
+    adding Eclipse prject to /code/
+
+commit c253f2cfc0416618c3dfd793a43d9df146238aaf
+Author: sc00278-svg <sc00278@my.westga.edu>
+Date:   Thu Aug 21 10:05:26 2025 -0400
+
+    Adding base project structure
+
+commit 05ddf174043e2ae2a4e8d6a2aba30b36d3d6845a
+Author: sc00278-svg <sc00278@my.westga.edu>
+Date:   Tue Aug 19 10:07:23 2025 -0400
+
+    Initial commit
