@@ -10,7 +10,9 @@ public class BillCalculator {
 	/**calculates the subTotal for an array of BillItems
 	 * 
 	 * @precondition BillItem[] has no null values
+	 * 
 	 * @param items the items in an array of BIllItems
+	 * 
 	 * @return the subTotal of a bill
 	 */
 	public static double subtotalCalculation(BillItem[] items) {
@@ -35,7 +37,10 @@ public class BillCalculator {
 	
 	/**calculates the tax of an array of BillItems
 	 * 
+	 * @precondition BillItem[] has no null values
+	 * 
 	 * @param items the items in the Bill
+	 * 
 	 * @return the tax for the bill
 	 */
 	public static double getTax(BillItem[] items) {
@@ -57,7 +62,9 @@ public class BillCalculator {
 	/**calculates the tip for an array of BillItems
 	 * 
 	 * @precondition BillItem[] has no null values
+	 * 
 	 * @param items the items in an array of BIllItems
+	 * 
 	 * @return the tip for the bill
 	 */
 	public static double getTip(BillItem[] items) {
@@ -78,12 +85,12 @@ public class BillCalculator {
 	/**calculates the total for the array of BillITems
 	 * 
 	 * @precondition BillItem[] has no null values
+	 * 
 	 * @param items the items in an array of BIllItems
+	 * 
 	 * @return total of the bill
 	 */
 	public static double getTotal(BillItem[] items) {
-		//read the instructions for lab 4
-		//Due on Monday
 		boolean isItFull = true;
 		for (BillItem currItem : items) {
 			if (currItem == null) {
