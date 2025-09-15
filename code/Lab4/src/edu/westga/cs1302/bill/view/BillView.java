@@ -21,20 +21,20 @@ public class BillView {
 	 * @return a String containing the list of bill items and total for the bill
 	 */
 	public static String getText(Bill bill) {
+		BillItem[] items = bill.getItems().toArray(new BillItem[bill.getItems().size()]);
 		String text = "ITEMS" + System.lineSeparator();
-		double subTotal = 0.0;
+		double subTotal = BillCalculator.subtotalCalculation(items);
 		for (BillItem item : bill.getItems()) {
 			text += item.getName() + " - " + item.getAmount() + System.lineSeparator();
-			subTotal += item.getAmount();
 		}
 		
 		text += System.lineSeparator();
 		text += "SUBTOTAL - $" + subTotal + System.lineSeparator();
-		double tax = BillCalculator.getTax(bill);
-		double tip = subTotal * Bill.TIP_RATE;
-		text += "TAX - $" + BillView.roundToNearestHundredth(BillCalculator.getTax(bill)) + System.lineSeparator();
+		double tax = BillCalculator.getTax(items);
+		double tip = BillCalculator.getTip(items);
+		text += "TAX - $" + BillView.roundToNearestHundredth(tax) + System.lineSeparator();
 		text += "TIP - $" + BillView.roundToNearestHundredth(tip) + System.lineSeparator();
-		text += "TOTAL - $" + BillView.roundToNearestHundredth(subTotal + tip + tax);
+		text += "TOTAL - $" + BillView.roundToNearestHundredth(BillCalculator.getTotal(items));
 		
 		return text;
 	}
