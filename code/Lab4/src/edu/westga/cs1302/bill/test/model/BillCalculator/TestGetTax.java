@@ -27,7 +27,7 @@ class TestGetTax {
 		//act
 		double actual = BillCalculator.getTax(bill);
 		//assert
-		assertEquals(actual, 1.377, "checks that the subtotal is calculated correctly");
+		assertEquals(actual, 1.377, "checks that the tax is calculated correctly");
 	}
 	
 	@Test

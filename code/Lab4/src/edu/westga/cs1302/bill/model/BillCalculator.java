@@ -56,10 +56,23 @@ public class BillCalculator {
 	
 	/**calculates the tip for an array of BillItems
 	 * 
+	 * @precondition BillItem[] has no null values
+	 * @param items the items in an array of BIllItems
 	 * @return the tip for the bill
 	 */
-	public static double getTip() {
-		return 0;
+	public static double getTip(BillItem[] items) {
+		boolean isItFull = true;
+		for (BillItem currItem : items) {
+			if (currItem == null) {
+				isItFull = false;
+			}
+		}
+		if (!isItFull) {
+			throw new IllegalArgumentException("Bill array is not full");
+        } else {
+  		  double tip = BillCalculator.subtotalCalculation(items) * Bill.TIP_RATE;
+  		  return tip;
+        }
 	}
 	
 	/**calculates the total for the array of BillITems
