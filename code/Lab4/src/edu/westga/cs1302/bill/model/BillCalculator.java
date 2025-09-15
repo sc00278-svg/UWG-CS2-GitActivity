@@ -77,11 +77,24 @@ public class BillCalculator {
 	
 	/**calculates the total for the array of BillITems
 	 * 
+	 * @precondition BillItem[] has no null values
+	 * @param items the items in an array of BIllItems
 	 * @return total of the bill
 	 */
-	public double getTotal() {
+	public static double getTotal(BillItem[] items) {
 		//read the instructions for lab 4
 		//Due on Monday
-		return 0;
+		boolean isItFull = true;
+		for (BillItem currItem : items) {
+			if (currItem == null) {
+				isItFull = false;
+			}
+		}
+		if (!isItFull) {
+			throw new IllegalArgumentException("Bill array is not full");
+        } else {
+		  double total = BillCalculator.subtotalCalculation(items) + BillCalculator.getTax(items) + BillCalculator.getTip(items);
+		  return total;
+        }
 	}
 }
