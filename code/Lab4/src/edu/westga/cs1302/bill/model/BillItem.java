@@ -6,10 +6,10 @@ package edu.westga.cs1302.bill.model;
  * @version Fall 2025
  */
 public class BillItem {
-	private String name;
-	private double amount;
+	private final String name;
+	private final double amount;
 	
-	/** create a new bill item with the provided name and amount
+     /** create a new bill item with the provided name and amount
 	 * 
 	 * @precondition name != null &&
 	 * 				 amount > 0
@@ -19,7 +19,7 @@ public class BillItem {
 	 * @param name the name of the bill item
 	 * @param amount the amount (cost) of the bill item
 	 */
-	public BillItem(String name, double amount) {
+     public BillItem(String name, double amount) {
 		if (name == null) {
 			throw new IllegalArgumentException("name must not be null.");
 		}
