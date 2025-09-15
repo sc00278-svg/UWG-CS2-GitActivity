@@ -22,15 +22,15 @@ public class BillCalculator {
 				isItFull = false;
 			}
 		}
-		if (isItFull == false) {
+		if (!isItFull) {
 			throw new IllegalArgumentException("Bill array is not full");
         } else {
           //calculates the tax for the bill
           for (BillItem currItem : items) {
 		    sT += currItem.getAmount();
 		  }
+          return sT;
 		}
-		return sT;
 	}
 	
 	/**calculates the tax of an array of BillItems
@@ -39,9 +39,19 @@ public class BillCalculator {
 	 * @return the tax for the bill
 	 */
 	public static double getTax(BillItem[] items) {
-  //		double tax = BillCalculator.subtotalCalculation(items) * Bill.TAX_RATE;
-  //		return tax;
-		return 0;
+		boolean isItFull = true;
+		//check for null values in the BillItem array
+		for (BillItem currItem : items) {
+			if (currItem == null) {
+				isItFull = false;
+			}
+		}
+		if (!isItFull) {
+			throw new IllegalArgumentException("Bill array is not full");
+        } else {
+  		  double tax = BillCalculator.subtotalCalculation(items) * Bill.TAX_RATE;
+  		  return tax;
+        }
 	}
 	
 	/**calculates the tip for an array of BillItems
