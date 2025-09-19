@@ -1,3 +1,67 @@
+commit abf9b0fba6be617641f945af6113607d1eeb5385
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Mon Sep 15 07:48:57 2025 -0400
+
+    final toches to lab 4
+    
+    1) looked over lab 4 one more time an made a few changes like getting rid of some comments i added as reminders to myself.
+
+commit 5c44414677d182c57b583d907ea4024becf400c1
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Mon Sep 15 07:40:19 2025 -0400
+
+    finishing lab 4
+    
+    1) updated the getText method in the BillView class.
+
+commit 070a1a9107ab5838290db9015ae7fe6a138f2c87
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Sep 14 22:03:19 2025 -0400
+
+    implementing the getTotal method
+    
+    1) implemented the getTotal method.
+    2) implemented the tests in TestGetTotal.
+
+commit e5b2775782d4ff0a345eb71ee68299793055620d
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Sep 14 21:54:27 2025 -0400
+
+    implementing the getTip method
+    
+    1) implemented the getTip method
+    2) implemented the tests in TestGetTip
+    3) fixed a little typo in one of the tests in TestGetTax
+
+commit c22c30353bfb6c1bffdb5307fbc003512cd6deca
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Sep 14 21:45:38 2025 -0400
+
+    implementing the getTax method
+    
+    1) implemented the getTax method in BillCalculator.
+    2) implemented tests for the getTax method in TestGetTax
+
+commit 96b7482b10b3fa9fc11cd078a0e81b6713a1a6c3
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Sep 14 20:29:44 2025 -0400
+
+    subTotalCalculation method and tests
+    
+    1) made the BillCalculator class
+    2) made an outline for the methods in the BillCalculator class
+    3) made test classes for the methods
+    4) implemented the subTotalCalculation method
+    5) implemented the tests for the subTotalCalculation method
+
+commit 1597a24c8b118f76ede187ae66d47e21d4918c5a
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Sep 11 12:03:04 2025 -0400
+
+    adding Lab 4
+    
+    1) added the lab 4 to the code folder
+
 commit 03915521ebdb7f436975963e2296b9be07498599
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Thu Sep 11 08:38:16 2025 -0400

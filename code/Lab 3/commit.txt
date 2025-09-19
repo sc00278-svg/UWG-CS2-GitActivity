@@ -1,3 +1,11 @@
+commit 03915521ebdb7f436975963e2296b9be07498599
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Sep 11 08:38:16 2025 -0400
+
+    fixing checkstyle issues in lab 3
+    
+    1) fixed checkstyle issues in the MainWindow in Lab 3.
+
 commit 486806c0e5e798337b1f59193fe6309b43e0a0fd
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Thu Sep 4 14:41:14 2025 -0400
