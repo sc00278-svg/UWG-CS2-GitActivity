@@ -46,7 +46,7 @@ public class Task {
   
   /**gets the priority of a task.
    */
-  public String getPriorit() {
+  public String getPriority() {
     return this.priority;
   }
   

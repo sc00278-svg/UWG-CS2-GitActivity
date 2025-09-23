@@ -42,7 +42,9 @@ public class MainWindow {
 
   @FXML
   void selectTask(MouseEvent event) {
-    this.taskList.getSelectionModel().getSelectedItem();
+    Task selectedTask = this.taskList.getSelectionModel().getSelectedItem();
+    this.selectedDescription.setText(selectedTask.getDescription());
+    this.selectedTaskPriority.setText(selectedTask.getPriority());
     
   }
 
