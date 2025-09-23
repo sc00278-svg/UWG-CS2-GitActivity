@@ -55,6 +55,11 @@ public class MainWindow {
     this.taskList.getItems().add(newTask);
     
   }
+  
+  @FXML
+  void updateDescription(ActionEvent event) {
+    Task selected = this.taskList.getSelectionModel().getSelectedItem();
+  }
 
   /**
   * Perform any needed initialization of UI components and underlying objects.
