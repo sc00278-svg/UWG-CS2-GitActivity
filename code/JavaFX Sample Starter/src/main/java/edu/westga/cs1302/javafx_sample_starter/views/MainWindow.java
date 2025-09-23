@@ -1,8 +1,10 @@
 package edu.westga.cs1302.javafx_sample_starter.views;
 
+import edu.westga.cs1302.javafx_sample_starter.model.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -22,27 +24,37 @@ public class MainWindow {
   private TextField taskName;
 
   @FXML
-  private ComboBox<?> taskPriority;
+  private ComboBox<String> taskPriority;
+  
+  @FXML
+  private ListView<Task> taskList;
 
   @FXML
   void selectPriority(ActionEvent event) {
-    
+    this.taskPriority.setValue(this.taskPriority.getValue());
   }
 
   @FXML
   void selectTask(MouseEvent event) {
+    this.taskList.getSelectionModel().getSelectedItem();
     
   }
 
   @FXML
   void submitTask(ActionEvent event) {
-
+    Task newTask = new Task(this.taskName.getText(), this.taskPriority.getValue(), this.taskDescription.getText());
+    this.taskList.getItems().add(newTask);
+    // TO DO: add the toString method to the Task class to make this work right
+    
   }
 
   /**
   * Perform any needed initialization of UI components and underlying objects.
   */
   public void initialize() {
-    
+    this.taskPriority.getItems().add("High"); // turn into constants in the Task class
+    this.taskPriority.getItems().add("Medium");
+    this.taskPriority.getItems().add("Low");
+    this.taskPriority.setValue(this.taskPriority.getItems().get(1));
   }
 }

@@ -21,6 +21,6 @@
       <Label text="Task Priority" />
       <ComboBox fx:id="taskPriority" onAction="#selectPriority" prefWidth="150.0" />
       <Button mnemonicParsing="false" onAction="#submitTask" text="Submit Task" />
-      <ListView onMouseClicked="#selectTask" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="taskList" onMouseClicked="#selectTask" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </VBox>
