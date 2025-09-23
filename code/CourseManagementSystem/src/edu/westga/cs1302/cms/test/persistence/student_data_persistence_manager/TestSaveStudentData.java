@@ -1,10 +1,10 @@
-package edu.westga.cs1302.javafx_sample_starter.test.model.task;
+package edu.westga.cs1302.cms.test.persistence.student_data_persistence_manager;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class TestTaskConstructor {
+class TestSaveStudentData {
 
 	@Test
 	void test() {
