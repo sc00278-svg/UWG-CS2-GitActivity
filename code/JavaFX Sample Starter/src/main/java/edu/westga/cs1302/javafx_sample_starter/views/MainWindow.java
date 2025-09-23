@@ -42,9 +42,9 @@ public class MainWindow {
 
   @FXML
   void submitTask(ActionEvent event) {
-    Task newTask = new Task(this.taskName.getText(), this.taskPriority.getValue(), this.taskDescription.getText());
+    Task newTask = new Task(this.taskName.getText(), this.taskPriority.getValue(),
+        this.taskDescription.getText());
     this.taskList.getItems().add(newTask);
-    // TO DO: add the toString method to the Task class to make this work right
     
   }
 
