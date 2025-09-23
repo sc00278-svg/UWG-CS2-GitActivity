@@ -18,6 +18,12 @@ import javafx.scene.input.MouseEvent;
 public class MainWindow {
 
   @FXML
+  private TextArea selectedDescription;
+
+  @FXML
+  private TextField selectedTaskPriority;
+
+  @FXML
   private TextArea taskDescription;
 
   @FXML
@@ -55,6 +61,7 @@ public class MainWindow {
     this.taskPriority.getItems().add("High"); // turn into constants in the Task class
     this.taskPriority.getItems().add("Medium");
     this.taskPriority.getItems().add("Low");
-    this.taskPriority.setValue(this.taskPriority.getItems().get(1));
+    this.taskPriority.setValue(this.taskPriority.getItems().get(1)); 
+    // preselects the medium value
   }
 }

@@ -18,6 +18,15 @@ public class Task {
    * @param descript the description of the task
    */
   public Task(String name, String priority, String descript) {
+    if (name == null) {
+      throw new IllegalArgumentException("name can not be null");
+    }
+    if (priority == null) {
+      throw new IllegalArgumentException("name can not be null");
+    }
+    if (descript == null) {
+      throw new IllegalArgumentException("name can not be null");
+    }
     this.name = name;
     this.description = descript;
     this.priority = priority;

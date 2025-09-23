@@ -17,10 +17,14 @@
       <Label text="Task Name" />
       <TextField fx:id="taskName" />
       <Label text="Task Description" />
-      <TextArea fx:id="taskDescription" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="taskDescription" prefHeight="100.0" prefWidth="518.0" />
       <Label text="Task Priority" />
       <ComboBox fx:id="taskPriority" onAction="#selectPriority" prefWidth="150.0" />
       <Button mnemonicParsing="false" onAction="#submitTask" text="Submit Task" />
-      <ListView fx:id="taskList" onMouseClicked="#selectTask" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="taskList" onMouseClicked="#selectTask" prefHeight="103.0" prefWidth="518.0" />
+      <Label text="Selected Task Description" />
+      <TextArea fx:id="selectedDescription" editable="false" prefHeight="200.0" prefWidth="200.0" />
+      <Label text="Selected Task Priority" />
+      <TextField fx:id="selectedTaskPriority" editable="false" />
    </children>
 </VBox>
