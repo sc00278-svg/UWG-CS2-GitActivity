@@ -45,7 +45,6 @@ public class MainWindow {
     Task selectedTask = this.taskList.getSelectionModel().getSelectedItem();
     this.selectedDescription.setText(selectedTask.getDescription());
     this.selectedTaskPriority.setText(selectedTask.getPriority());
-    
   }
 
   @FXML
@@ -53,7 +52,6 @@ public class MainWindow {
     Task newTask = new Task(this.taskName.getText(), this.taskPriority.getValue(),
         this.taskDescription.getText());
     this.taskList.getItems().add(newTask);
-    
   }
   
   @FXML
