@@ -32,6 +32,19 @@ public class Task {
     this.priority = priority;
   }
   
+  /** Updates the description of a task.
+   *
+   * @param newDescription the new description of the task
+   * @return update description
+   */
+  public String updateDescription(String newDescription) {
+    if (newDescription == null || newDescription.isEmpty()) {
+      throw new IllegalArgumentException("description can not be null");
+    }
+    this.description = newDescription;
+    return this.description;
+  }
+  
   /**gets the name of a task.
    */
   public String getName() {
@@ -54,6 +67,6 @@ public class Task {
    */
   public String toString() {
     return "Task: " + this.name  + "\nPriority: " + this.priority + "\nDescription: "
-        + this.description;
+            + this.description;
   }
 }

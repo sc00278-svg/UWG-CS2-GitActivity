@@ -59,6 +59,12 @@ public class MainWindow {
   @FXML
   void updateDescription(ActionEvent event) {
     Task selected = this.taskList.getSelectionModel().getSelectedItem();
+    selected.updateDescription(this.selectedDescription.getText());
+  }
+  
+  @FXML
+  void removeTask(ActionEvent event) {
+    
   }
 
   /**
