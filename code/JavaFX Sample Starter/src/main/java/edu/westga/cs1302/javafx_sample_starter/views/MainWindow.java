@@ -61,11 +61,6 @@ public class MainWindow {
     Task selected = this.taskList.getSelectionModel().getSelectedItem();
     selected.updateDescription(this.selectedDescription.getText());
   }
-  
-  @FXML
-  void removeTask(ActionEvent event) {
-    
-  }
 
   /**
   * Perform any needed initialization of UI components and underlying objects.
