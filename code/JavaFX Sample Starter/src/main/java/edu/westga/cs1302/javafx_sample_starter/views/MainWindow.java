@@ -64,7 +64,10 @@ public class MainWindow {
   
   @FXML
   void removeTask(ActionEvent event) {
-    
+    Task task = this.taskList.getSelectionModel().getSelectedItem();
+    if (task != null) {
+      this.taskList.getItems().remove(task);
+    }
   }
 
   /**
@@ -74,7 +77,7 @@ public class MainWindow {
     this.taskPriority.getItems().add("High"); // turn into constants in the Task class
     this.taskPriority.getItems().add("Medium");
     this.taskPriority.getItems().add("Low");
-    this.taskPriority.setValue(this.taskPriority.getItems().get(1)); 
     // preselects the medium value
+    this.taskPriority.setValue(this.taskPriority.getItems().get(1)); 
   }
 }
