@@ -16,6 +16,7 @@ import java.util.Scanner;
  */
 public class StudentDataPersistenceManager {
 
+  public static final String FILE_LOCATION = "data.txt";
   /** Save the students!.
    *
    * @precondition students != null
@@ -25,15 +26,27 @@ public class StudentDataPersistenceManager {
    * @throws IO exception when unable to write to default file location
    */
   public static void saveStudentData(Student[] students) throws IOException {
-    FileWriter writer = new FileWriter("names. txt");
-
-    for (Student currStudent : students) {
-      writer.write(currStudent.getName() + System.lineSeparator());
-      writer.write(currStudent.getGrade());
-      writer.write(System.lineSeparator());
+    StudentDataPersistenceManager.saveStudentData(students, StudentDataPersistenceManager.FILE_LOCATION);
+  }
+  
+  /**
+   * 
+   * @param students
+   * @param fileLocation
+   * @throws IOException
+   */
+  public static void saveStudentData(Student[] students, String fileLocation) throws IOException {
+    if (students == null) {
+      throw new IllegalArgumentException("must provide an array of students");
     }
 
-    writer.close();
+    try (FileWriter writer = new FileWriter(fileLocation)) {
+      for (Student currStudent : students) {
+        if (currStudent != null) {
+        	writer.write(currStudent.getName() + "," + currStudent.getGrade() + System.lineSeparator());
+        }
+      }
+    }
   }
 
   /** Load the students!.

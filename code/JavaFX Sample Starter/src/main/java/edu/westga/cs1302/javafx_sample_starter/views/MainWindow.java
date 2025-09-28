@@ -4,6 +4,7 @@ import edu.westga.cs1302.javafx_sample_starter.model.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -16,6 +17,15 @@ import javafx.scene.input.MouseEvent;
  * @version Fall 2025
  */
 public class MainWindow {
+
+  @FXML
+  private Label highPriLabel;
+
+  @FXML
+  private Label lowPriLabel;
+
+  @FXML
+  private Label midPriLabel;
 
   @FXML
   private TextArea selectedDescription;
@@ -34,6 +44,11 @@ public class MainWindow {
   
   @FXML
   private ListView<Task> taskList;
+  
+  @FXML
+  void displayNumOfPriorities(ActionEvent event) {
+    
+  }
 
   @FXML
   void selectPriority(ActionEvent event) {
