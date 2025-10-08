@@ -18,14 +18,14 @@ public class Task {
    * @param descript the description of the task
    */
   public Task(String name, String priority, String descript) {
-    if (name == null) {
-      throw new IllegalArgumentException("name can not be null");
+    if (name == null || name.isEmpty()) {
+      throw new IllegalArgumentException("name can not be null or empty");
     }
-    if (priority == null) {
-      throw new IllegalArgumentException("name can not be null");
+    if (priority == null || priority.isEmpty()) {
+      throw new IllegalArgumentException("name can not be null or empty");
     }
-    if (descript == null) {
-      throw new IllegalArgumentException("name can not be null");
+    if (descript == null || descript.isEmpty()) {
+      throw new IllegalArgumentException("name can not be null or empty");
     }
     this.name = name;
     this.description = descript;
@@ -46,26 +46,34 @@ public class Task {
   }
   
   /**gets the name of a task.
+   * 
+   * @return name the name of the task
    */
   public String getName() {
     return this.name;
   }
   
   /**gets the description of a task.
+   * 
+   * @return description the description of the task
    */
   public String getDescription() {
     return this.description;
   }
   
   /**gets the priority of a task.
+   * 
+   * @return priority the priority of the task
    */
   public String getPriority() {
     return this.priority;
   }
   
   /** To String method.
+   * 
+   * @return the name of the task
    */
   public String toString() {
-    return "Task: " + this.name;
+    return this.name;
   }
 }

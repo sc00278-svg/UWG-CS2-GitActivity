@@ -1,6 +1,9 @@
 package edu.westga.cs1302.javafx_sample_starter.views;
 
+import java.util.ArrayList;
+
 import edu.westga.cs1302.javafx_sample_starter.model.Task;
+import edu.westga.cs1302.javafx_sample_starter.model.Utility;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
@@ -47,7 +50,17 @@ public class MainWindow {
   
   @FXML
   void displayNumOfPriorities(ActionEvent event) {
-    
+	// just making a change to the thing to hopefully get the git commit to work
+	int num = this.taskList.getItems().size();
+    for (String currPrio : this.taskPriority.getItems()) {
+    	if (currPrio.equals("High")) {
+    		this.highPriLabel.setText(currPrio + " Priority: " + Utility.tasksOfAPriority(this.taskList.getItems().toArray(new Task[num]), currPrio));
+    	} else if (currPrio.equals("Medium")) {
+    		this.midPriLabel.setText(currPrio + " Priority: " + Utility.tasksOfAPriority(this.taskList.getItems().toArray(new Task[num]), currPrio));
+    	} else if (currPrio.equals("Low")) {
+    		this.lowPriLabel.setText(currPrio + " Priority: " + Utility.tasksOfAPriority(this.taskList.getItems().toArray(new Task[num]), currPrio));
+    	}
+    }
   }
 
   @FXML
@@ -87,7 +100,8 @@ public class MainWindow {
   * Perform any needed initialization of UI components and underlying objects.
   */
   public void initialize() {
-    this.taskPriority.getItems().add("High"); // turn into constants in the Task class
+    // turn into constants in the Task class
+    this.taskPriority.getItems().add("High");
     this.taskPriority.getItems().add("Medium");
     this.taskPriority.getItems().add("Low");
     // preselects the medium value

@@ -1,4 +1,6 @@
-aaa
-1
-ddd
-3
+aaa,1
+ddd,3
+help,88
+help,88
+idk,17
+dddd,23

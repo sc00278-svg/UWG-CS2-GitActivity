@@ -2,6 +2,8 @@ package edu.westga.cs1302.javafx_sample_starter.test.model.utility;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.ArrayList;
+
 import org.junit.jupiter.api.Test;
 
 import edu.westga.cs1302.javafx_sample_starter.model.Task;
@@ -17,13 +19,13 @@ class testTasksOfPriority {
 	@Test
 	void testWhenNormal() {
 		//arrange
-		Task[] tkL = new Task[3];
+		ArrayList<Task> tkL = new ArrayList<Task>();
 		Task tk1 = new Task("task1", "low", "fffff");
-		tkL[0] = tk1;
+		tkL.add(tk1);
 		Task tk2 = new Task("task2", "high", "fffff");
-		tkL[1] = tk2;
+		tkL.add(tk2);
 		Task tk3 = new Task("task3", "low", "llllll");
-		tkL[2] = tk3;
+		tkL.add(tk3);
 		//act
 		int num = Utility.tasksOfAPriority(tkL, "low");
 		//assert

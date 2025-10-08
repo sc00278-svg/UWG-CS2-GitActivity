@@ -1,5 +1,7 @@
 package edu.westga.cs1302.javafx_sample_starter.model;
 
+import java.util.ArrayList;
+
 /**class takes a priority and a list of tasks for finding out how many tasks are in each priority category.
  * 
  * @author samco
@@ -14,7 +16,7 @@ public class Utility {
 	 * @return the number of tasks for the priority
 	 */
 	public static int tasksOfAPriority(Task[] tasks, String priority) {
-		if (tasks != null && priority != null) {
+		if (!priority.isEmpty() || tasks.length != 0 || tasks != null || priority != null) {
 			int num = 0;
 			for (Task currtask : tasks) {
 				if (currtask.getPriority().equals(priority)) {

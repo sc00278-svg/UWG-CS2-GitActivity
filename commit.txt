@@ -1,3 +1,126 @@
+commit e4a589197d333b2610c7537f07f86def17df20ad
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Sep 28 23:30:32 2025 -0400
+
+    Part 5 B: Businuess Logic Counting num of tasks
+    
+    1) made anthoer class.
+    2) added a static method to the class for counting the mumber of tasks of a given priority.
+
+commit a17942378f5167dba81a24e5569aceaa33627f04
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Sep 28 16:01:04 2025 -0400
+
+    Part 5 A: implementing UI
+    
+    1) added labels for all the priorities.
+    2) added a button for displaying the number of tasks in each priority.
+
+commit 0736581b71fa91f10ee5233a3f7caec356664b95
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Sep 24 10:53:40 2025 -0400
+
+    Part 4 B: Implementing UI for Removing task
+    
+    1) implemented the method for removing a selected task from the list.
+
+commit cd0646828e62f4ff202fa65b19af9b4c73b68c00
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Sep 24 10:35:13 2025 -0400
+
+    Issues with Junit configuration
+    
+    1) issues with the Junit stuff still.
+
+commit b17747663426ddc8b585d1077c115785776a8ebd
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Sep 24 09:33:49 2025 -0400
+
+    Part 4 A: UI for removing a task
+    
+    1) updated MainWindow to have a button with an associated method.
+
+commit 0e0992e9b5b19f147aff229eb21c2917f31edda8
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Sep 24 09:30:24 2025 -0400
+
+    Part 3 C: connecting business Logic to UI
+    
+    1) implemented the method for updating the description of the currently selected task.
+
+commit f9666fe89a0a8c5356bf564c4fa544c31773897c
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Sep 24 09:27:18 2025 -0400
+
+    Part 3 A and B: updating description
+    
+    1) accidentally titled the last commit with the wrong part. It says part 3 B when really it is part 3 A.
+    2) actually did part 3 B here: added a method in the Task class to update the description of a task.
+
+commit 60c08e1e2940901320da4c8d842074505436edb1
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Tue Sep 23 17:52:27 2025 -0400
+
+    Part 3 B: business Logic for Updating Description
+    
+    1) rmade the display textArea editable.
+    2) added a button for updating the description.
+
+commit 5f9bfb576c2aecba5c32a45a64cb2e50d72018ce
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Tue Sep 23 16:27:04 2025 -0400
+
+    Part 2. B: Connet UI to Businuess Logic
+    
+    1) updated the selectTask method in the MainWindow to display the description and the priority of a selected task.
+
+commit ff9afe5f27169b58cd327c093a88c9dc0909f235
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Tue Sep 23 13:53:10 2025 -0400
+
+    Issue with project
+    
+    1)can't get the imports for the Junit test cases to work.
+
+commit d1dcee0fb6f2027f19dec5abff70541f7efb8621
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Tue Sep 23 08:28:12 2025 -0400
+
+    part 2 A: UI for adding Tasks
+    
+    1) updated the MainWindow to have a read only text area and a label to go with it.
+    2) added a read only textField in the MainWindow along with a label to go with it.
+
+commit cc9ccfb07fe0caa5d51bea0ce592ae606aa6f671
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Mon Sep 22 21:36:04 2025 -0400
+
+    Connect UI to Business Logic for adding Task
+    
+    1) I forgot this commit and the last one were two differnt parts.
+    2) fixed some checkstyle stuff.
+    ) implemented the submitTask in the MainWindow.
+
+commit ae4e14e811c260f6f24fa864f638e0e76690e5b1
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Mon Sep 22 21:28:26 2025 -0400
+
+    Business Logic for Storing a Task
+    
+    1) made the Task class
+    2) built the three parameter constructor and the getters for the name, description, and the priority of a task.
+    3) implemented the toString method in the Task class.
+
+commit 63a2324f758f91c3798cabe34d976e03beb8279a
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Fri Sep 19 12:47:31 2025 -0400
+
+    UI for Adding Tasks
+    
+    1) added a JavaFX starter for the project.
+    2) added the labels, testfields, textarea, comboBox, button, and the listView in sceneBuilder.
+    3) coppied the code from the sample skeleton into MainWindow class and fixed checkstyle issues.
+
 commit abf9b0fba6be617641f945af6113607d1eeb5385
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Mon Sep 15 07:48:57 2025 -0400

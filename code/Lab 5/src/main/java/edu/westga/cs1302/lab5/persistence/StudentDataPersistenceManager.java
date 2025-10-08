@@ -53,8 +53,18 @@ public class StudentDataPersistenceManager {
 			}
 		}
 	}
+	/**Load the students!
+	 * 
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	public static Student[] loadStudentData() throws FileNotFoundException, IOException {
+		return StudentDataPersistenceManager.loadStudentData(StudentDataPersistenceManager.FILE_LOCATION);
+	}
 
 	/** Load the students!
+	 * 
+	 * @param file the location of the input file
 	 * 
 	 * @precondition none
 	 * @postcondition none
@@ -63,17 +73,19 @@ public class StudentDataPersistenceManager {
 	 * @throws FileNotFoundException no file exists at FILE_LOCATION
 	 * @throws IOException unable to read file due to formatting issue 
 	 */
-	public static Student[] loadStudentData() throws FileNotFoundException, IOException {
+	public static Student[] loadStudentData(String file) throws FileNotFoundException, IOException {
 		ArrayList<Student> students = new ArrayList<Student>();
-		File inputFile = new File(StudentDataPersistenceManager.FILE_LOCATION);
+		File inputFile = new File(file);
 		
 		try (Scanner reader = new Scanner(inputFile)) {
 			while (reader.hasNextLine()) {
-				String name = reader.nextLine();
-				if (!reader.hasNextLine()) {
+				String text = reader.nextLine();
+				String[] line = text.split(",");
+				String name = line[0];
+				if (line.length != 2) {
 					throw new IOException("missing grade for " + name);
 				}
-				int grade = Integer.parseInt(reader.nextLine());
+				int grade = Integer.parseInt(line[1]);
 				students.add(new Student(name, grade));
 			}
 		} catch (NumberFormatException error) {
