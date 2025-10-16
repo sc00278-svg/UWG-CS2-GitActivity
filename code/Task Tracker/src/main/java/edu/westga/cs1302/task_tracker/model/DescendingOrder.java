@@ -1,7 +1,6 @@
 package edu.westga.cs1302.task_tracker.model;
 
 import java.util.Comparator;
-
 import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
 
 /** compares two tasks to determine which one comes first in descending order

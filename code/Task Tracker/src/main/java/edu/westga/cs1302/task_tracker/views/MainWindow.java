@@ -97,6 +97,6 @@ public class MainWindow {
     	this.ascend = new AscendingOrder();
     	this.descend = new DescendingOrder();
     	this.order.getItems().add(this.ascend);
-    	this.order.getItems().add(descend);
+    	this.order.getItems().add(this.descend);
     }
 }
