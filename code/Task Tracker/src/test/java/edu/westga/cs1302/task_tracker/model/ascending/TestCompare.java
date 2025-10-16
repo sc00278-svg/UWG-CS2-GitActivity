@@ -38,4 +38,11 @@ class TestCompare {
 			new AscendingOrder().compare(one, null);
 		});
 	}
+	
+	@Test
+	void testWhenBothTasksAreNull() {
+		assertThrows(IllegalArgumentException.class, () -> {
+			new AscendingOrder().compare(null, null);
+		});
+	}
 }
