@@ -49,6 +49,7 @@ public class MainWindow {
     void addTask(ActionEvent event) {
     	try {
     		this.tasks.getItems().add(new Task(this.name.getText(), this.description.getText(), this.priority.getValue()));
+    		this.sort();
     	} catch (IllegalArgumentException error) {
     		Alert alert = new Alert(AlertType.ERROR);
     		alert.setContentText(error.getMessage());
@@ -101,6 +102,7 @@ public class MainWindow {
     	if (selectedTask != null) {
     		selectedTask.setDescription(this.selectedDescription.getText());
     	}
+    	this.sort();
     }
 
     /** Display the count of tasks for each priority.
@@ -126,10 +128,14 @@ public class MainWindow {
      */
     @FXML
     void sortTasks(ActionEvent event) {
-    	if (this.order.getValue() != null) {
+    	this.sort();
+    }
+
+	private void sort() {
+		if (this.order.getValue() != null) {
     		this.tasks.getItems().sort(this.order.getValue());
     	}
-    }
+	}
 
     /** Perform any needed initialization of UI components and underlying objects.
      * 
