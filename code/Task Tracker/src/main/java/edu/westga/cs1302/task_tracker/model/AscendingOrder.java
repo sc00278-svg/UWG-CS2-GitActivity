@@ -11,6 +11,17 @@ import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
  */
 public class AscendingOrder implements Comparator<Task> {
 
+	/**returns a value indicating the ordering of the two tasks
+	 *
+	 * @precondition
+	 * @postcondition
+	 * 
+	 * @param o1 != null && o2 != null
+	 * 
+	 * @return -1 if o1 is first
+	 * 			0 if o1 and o2 are equal
+	 * 			1 if o1 is after o2
+	 */
 	@Override
 	public int compare(Task o1, Task o2) {
 		if (o1 == null) {
