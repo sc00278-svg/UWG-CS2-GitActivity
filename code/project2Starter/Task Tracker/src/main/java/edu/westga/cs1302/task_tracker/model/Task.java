@@ -1,5 +1,7 @@
 package edu.westga.cs1302.task_tracker.model;
 
+import java.util.ArrayList;
+
 /** Stores basic information for a Task
  * 
  * @author CS 1302
@@ -65,6 +67,23 @@ public class Task {
 		this.name = name;
 		this.description = description;
 		this.priority = priority;
+	}
+	
+	/** adds a subtask and returns the new container task
+	 * 
+	 * @param subTask the subTask added
+	 * @return the current task as a container task
+	 */
+	public ContainerTask addTask(Task subTask) {
+			return new ContainerTask(this.name, this.description, this.priority, this.getSubtasks());
+	}
+	
+	/**gets a list of subTasks
+	 * 
+	 * @return return an empty list of Tasks
+	 */
+	public ArrayList<Task> getSubtasks() {
+		return new ArrayList<Task>();
 	}
 	
 	/** Return the name of the task

@@ -60,9 +60,12 @@ public class MainWindow {
     	}
     }
     
-    /**
+    /**Add new subTask to the currently selected Task.
      * 
-     * @param event
+     * @precondition
+     * @postcondition
+     * 
+     * @param event will not be used
      */
     @FXML
     void addSubTask(ActionEvent event) {
