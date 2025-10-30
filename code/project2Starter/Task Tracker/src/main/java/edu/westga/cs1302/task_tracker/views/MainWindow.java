@@ -4,6 +4,7 @@ import java.util.Comparator;
 
 import edu.westga.cs1302.task_tracker.model.Ascending;
 import edu.westga.cs1302.task_tracker.model.AscendingNames;
+import edu.westga.cs1302.task_tracker.model.ContainerTask;
 import edu.westga.cs1302.task_tracker.model.Descending;
 import edu.westga.cs1302.task_tracker.model.DescendingNames;
 import edu.westga.cs1302.task_tracker.model.Task;
@@ -19,6 +20,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
+import javafx.stage.Popup;
 
 /** Controller class for MainWindow of the Task Tracker system.
  * 
@@ -36,7 +39,7 @@ public class MainWindow {
     @FXML private TextField selectedPriority;
     @FXML private ListView<Task> tasks;
     @FXML private ComboBox<Comparator<Task>> order; 
-    @FXML private ListView<?> subTaskList;
+    @FXML private ListView<Task> subTaskList;
 
     /** Add a new task with the provided information to the listview.
      * 
@@ -69,7 +72,19 @@ public class MainWindow {
      */
     @FXML
     void addSubTask(ActionEvent event) {
-    	
+    	try {
+    		Task selectedTask = this.tasks.getSelectionModel().getSelectedItem();
+        	if (selectedTask != null) {
+        		Task subTask = new Task(this.name.getText(), this.description.getText(), this.priority.getValue());
+        		ContainerTask container = selectedTask.addTask(subTask);
+        		this.tasks.getItems().set(this.tasks.getItems().indexOf(selectedTask), container);
+        		this.subTaskList.getItems().add(subTask);
+        	}
+    	} catch (IllegalArgumentException error) {
+    		Alert alert = new Alert(AlertType.ERROR);
+    		alert.setContentText(error.getMessage());
+    		alert.showAndWait();
+    	}
     }
 
     
@@ -88,7 +103,26 @@ public class MainWindow {
     	if (selectedTask != null) {
     		this.selectedPriority.setText(selectedTask.getPriority().toString());
     		this.selectedDescription.setText(selectedTask.getDescription());
+    		
     	}
+    }
+    
+    /**display the selected subTask
+     * 
+     * @param event not used
+     */
+    @FXML
+    void selectSubtask(MouseEvent event) {
+    	
+		/*
+		 * Task selectedSubT = this.subTaskList.getSelectionModel().getSelectedItem();
+		 * if (selectedSubT != null) { Alert alert = new Alert(AlertType.INFORMATION);
+		 * alert.setContentText("Task: " + selectedSubT.getName() +
+		 * System.lineSeparator() + "Priority: " + selectedSubT.getPriority() +
+		 * System.lineSeparator() + "Description: " + selectedSubT.getDescription());
+		 * alert.showAndWait(); }
+		 */
+    	
     }
 
     /** Remove the currently selected task.
