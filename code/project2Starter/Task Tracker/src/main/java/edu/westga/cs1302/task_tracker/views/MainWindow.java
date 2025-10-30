@@ -10,6 +10,7 @@ import edu.westga.cs1302.task_tracker.model.DescendingNames;
 import edu.westga.cs1302.task_tracker.model.Task;
 import edu.westga.cs1302.task_tracker.model.Task.TaskPriority;
 import edu.westga.cs1302.task_tracker.model.TaskUtility;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -20,8 +21,6 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
-import javafx.stage.Popup;
 
 /** Controller class for MainWindow of the Task Tracker system.
  * 
@@ -77,8 +76,9 @@ public class MainWindow {
         	if (selectedTask != null) {
         		Task subTask = new Task(this.name.getText(), this.description.getText(), this.priority.getValue());
         		ContainerTask container = selectedTask.addTask(subTask);
+        		container.addTask(subTask);
         		this.tasks.getItems().set(this.tasks.getItems().indexOf(selectedTask), container);
-        		this.subTaskList.getItems().add(subTask);
+        		this.subTaskList.setItems(FXCollections.observableArrayList(container.getSubtasks()));
         	}
     	} catch (IllegalArgumentException error) {
     		Alert alert = new Alert(AlertType.ERROR);
@@ -103,7 +103,8 @@ public class MainWindow {
     	if (selectedTask != null) {
     		this.selectedPriority.setText(selectedTask.getPriority().toString());
     		this.selectedDescription.setText(selectedTask.getDescription());
-    		
+    		this.subTaskList.setItems(FXCollections.observableArrayList(selectedTask.getSubtasks()));
+    		//this.subTaskList.getItems();
     	}
     }
     
