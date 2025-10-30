@@ -113,16 +113,12 @@ public class MainWindow {
      */
     @FXML
     void selectSubtask(MouseEvent event) {
-    	
-		/*
-		 * Task selectedSubT = this.subTaskList.getSelectionModel().getSelectedItem();
-		 * if (selectedSubT != null) { Alert alert = new Alert(AlertType.INFORMATION);
-		 * alert.setContentText("Task: " + selectedSubT.getName() +
-		 * System.lineSeparator() + "Priority: " + selectedSubT.getPriority() +
-		 * System.lineSeparator() + "Description: " + selectedSubT.getDescription());
-		 * alert.showAndWait(); }
-		 */
-    	
+		  Task selectedSubT = this.subTaskList.getSelectionModel().getSelectedItem();
+		  if (selectedSubT != null) { 
+			  Alert alert = new Alert(AlertType.INFORMATION);
+		      alert.setContentText("Task: " + selectedSubT.getName() + System.lineSeparator() + "Priority: " + selectedSubT.getPriority() + System.lineSeparator() + "Description: " + selectedSubT.getDescription());
+		      alert.showAndWait(); 
+		  }
     }
 
     /** Remove the currently selected task.
