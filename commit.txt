@@ -1,3 +1,83 @@
+commit 18df2a0775ef711cc122170327505be2b4b51f6b
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Oct 30 08:32:17 2025 -0400
+
+    part 3 C connect UI to Business Logic for SubTasks
+    
+    1) implemented the method for adding subTasks and the selectTask method to display the list of subtasks for the currently selected task.
+    2) andded implementation to add a subTask to the currently selected task and make the currently selected task a ContainerTask in the addSubTask method of MainWindow class.
+
+commit 1a2bbd755e40b306dfbf1f5feca73b879ebe5e3a
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Oct 30 08:10:08 2025 -0400
+
+    Connect UI to Business Logic for Adding Task
+    
+    1) updated MainWindow class to implement a method for displaying subtasks in a popup alert window.
+
+commit 989a58a3023438d20fe91b4ff73314ad5f6f9bc6
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Oct 30 08:00:51 2025 -0400
+
+    Part 4 A: UI for Adding Tasks
+    
+    1) updated mainWindow for displaying selected subTask
+
+commit 4759f2c266babb8987f069707b02f84592492c90
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Oct 29 22:08:55 2025 -0400
+
+    Business Logic for SubTasks
+    
+    1) made the ContainerTask class that inherits from Task
+    2) added the addTask and getSubtasks methods in Task class
+    3) made override methods for the addTask and getSubtasks methods in ContainerTask class.
+    4) added a toString method in the ContainerTask class
+    5) made test cases for all the new mthods.
+
+commit b9fd72fe28fc5f5d6ed76c43a6880a01156c5940
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Tue Oct 28 11:21:24 2025 -0400
+
+    UI for SubTasks
+    
+    1) updated Mainwindow to have a button for adding subtasks and a listview for displaying subtasks of the selected task.
+
+commit cd7ce08a26f0a9fe3b1945608353fcb2bb652764
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Oct 26 12:17:07 2025 -0400
+
+    Connect UI to Business Logic for Sorting Based on Name
+    
+    1) updated mainWindow class to add the new comparators as options for sorting the list of tasks.
+
+commit 88003d759505bb424e7488015d732f09fd52de51
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sun Oct 26 12:12:18 2025 -0400
+
+    Business Logic for Sorting Based on Name
+    
+    1) added classes for comparing tasks based on their names alphabetically.
+    2) implemented the compare mthods in those classes.
+    3) made a test case for each ordering of the tasks based on names.
+
+commit 159eaf64b45ac517de4876adf0370a98b16665f3
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Oct 23 12:17:15 2025 -0400
+
+    Connect UI to Business Logic for Resorting Tasks
+    
+    1) made a helper method out of the body of the sortTask method.
+    2) called the new sort method in the sortTask method and methods that change the list of tasks.
+
+commit c9e1dc0e5e8004aded501e4a2ddedfd376d16b07
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Wed Oct 22 20:58:59 2025 -0400
+
+    Project 2 Starter
+    
+    1) added the starter for project 2.
+
 commit 6ee15ecb2c98a8505ea581b5fb3a06ba242bc271
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Thu Oct 16 07:35:18 2025 -0400
