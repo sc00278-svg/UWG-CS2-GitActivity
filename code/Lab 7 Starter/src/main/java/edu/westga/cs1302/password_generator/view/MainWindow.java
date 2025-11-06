@@ -93,12 +93,6 @@ public class MainWindow {
     			alert.show();
     			return;
     		}
-    		catch (ParseException e) {
-    			Alert alert = new Alert(AlertType.ERROR);
-    			alert.setContentText("Invalid Minimum Length: must be a positive integer, but was " + this.minimumLength.getText());
-    			alert.show();
-    			return;
-    		}
     	});
     }
     
