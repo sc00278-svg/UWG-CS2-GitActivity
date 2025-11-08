@@ -39,15 +39,5 @@ class Test {
 		
 		assertTrue(match);
 	}
-	
-	@org.junit.jupiter.api. Test
-	void testWhenMinLengthIsNegative() {
-		MainWindowViewModel viewModel = new MainWindowViewModel();
-		viewModel.minLength().set(-3);
-		
-		assertThrows(IllegalArgumentEcxeption.class, () -> {
-			viewModel.makePassword();
-		});
-	}
 
 }

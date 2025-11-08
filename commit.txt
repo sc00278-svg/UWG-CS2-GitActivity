@@ -1,3 +1,34 @@
+commit 82b037b032d2783ecfc690c00ee5aa7c65eccf49
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 6 08:54:49 2025 -0500
+
+    fixed things
+
+commit 4d2839267e7788ee96504160c0c7a4f5648957de
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 6 08:53:40 2025 -0500
+
+    binding for lab 7
+    
+    1) binding the components
+
+commit 3ca2aa4ecc654bda888167c93bb404f31f348681
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 6 08:30:31 2025 -0500
+
+    Lab 7 part 1: making the viewModel class
+    
+    1) made the viewModel class for the lab starter.
+    2) implemented the method makePassword method to mmove the logic out of the mainWindow class and into the viewModel.
+
+commit a9254a711a4eeb46b178d4e3e99601bf3a78307c
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Oct 30 10:29:26 2025 -0400
+
+    Lab 7 inital commit
+    
+    1) imported lab 7 starter.
+
 commit 18df2a0775ef711cc122170327505be2b4b51f6b
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Thu Oct 30 08:32:17 2025 -0400
