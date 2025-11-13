@@ -1,3 +1,20 @@
+commit 0542ad9f644786e78e67ecf9224c5edbe6d27fcc
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 13 08:46:09 2025 -0500
+
+    rest of lab 8
+    
+    1) updated the tests for the listView thing from before.
+    2) did the first part of the lab (used a changeListener and a regular expression to validate input).
+
+commit 0cbd5c95990604870ec9685f003c0633f0352eee
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Sat Nov 8 16:24:47 2025 -0500
+
+    Lab 8: store list of passwords
+    
+    1)updated mainwindow and the viewModel classes to support displaying a list of all the generated passwords
+
 commit 82b037b032d2783ecfc690c00ee5aa7c65eccf49
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Thu Nov 6 08:54:49 2025 -0500
