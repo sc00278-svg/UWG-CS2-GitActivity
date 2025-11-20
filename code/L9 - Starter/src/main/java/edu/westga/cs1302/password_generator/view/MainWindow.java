@@ -3,6 +3,7 @@ package edu.westga.cs1302.password_generator.view;
 import java.io.File;
 
 import edu.westga.cs1302.password_generator.viewmodel.ViewModel;
+import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
@@ -56,6 +57,11 @@ public class MainWindow {
     	
     	this.minimumLength.textProperty().addListener((observable, oldValue, newValue) -> {
     		this.minLengthErrorText.setVisible(!newValue.matches("\\d+") || Integer.parseInt(newValue) == 0);
+    		if (!newValue.matches("\\d+") || Integer.parseInt(newValue) == 0) {
+    			this.generatePasswordButton.disableProperty().set(true);
+    		} else {
+    			this.generatePasswordButton.disableProperty().set(false);
+    		}
     	});
     	
     	this.fielClose.setOnAction((event) -> {

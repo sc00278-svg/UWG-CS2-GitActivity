@@ -16,8 +16,8 @@
       <CheckBox fx:id="mustIncludeLowerCaseLetters" layoutX="13.0" layoutY="111.0" mnemonicParsing="false" text="Must Include Lower Case Letters" />
       <CheckBox fx:id="mustIncludeUpperCaseLetters" layoutX="13.0" layoutY="136.0" mnemonicParsing="false" text="Must Include Upper Case Letters" />
       <Button fx:id="generatePasswordButton" layoutX="50.0" layoutY="172.0" mnemonicParsing="false" text="Generate Password" />
-      <Label layoutX="13.0" layoutY="48.0" text="Minimum Length" />
-      <TextField fx:id="minimumLength" layoutX="117.0" layoutY="44.0" prefHeight="25.0" prefWidth="41.0" />
+      <Label layoutX="13.0" layoutY="61.0" text="Minimum Length" />
+      <TextField fx:id="minimumLength" layoutX="117.0" layoutY="57.0" prefHeight="25.0" prefWidth="41.0" />
       <Label fx:id="errorTextLabel" layoutX="9.0" layoutY="136.0" prefHeight="17.0" prefWidth="199.0" textFill="RED" />
       <ListView fx:id="passwordHistory" layoutX="15.0" layoutY="205.0" prefHeight="169.0" prefWidth="200.0" />
       <Label fx:id="minLengthErrorText" layoutX="40.0" layoutY="39.0" text="Must be a positive integer" textFill="RED" visible="false" />
