@@ -1,5 +1,8 @@
 package edu.westga.cs1302.password_generator.viewmodel;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -122,5 +125,25 @@ public class ViewModel {
     	
     	this.passwordHistory.add(password);
     }
+	
+	/**saves the password history to a text file.
+	 * 
+	 * @return file != null
+	 */
+	public boolean saveData(File file) {
+		if (file == null) {
+			return false;
+		}
+		
+		try (FileWriter writer = new FileWriter(file)) {
+			for (String passord : this.passwordHistory) {
+				writer.write(passord);
+				writer.write(System.lineSeparator());
+			}
+			return true;
+		} catch (IOException issue) {
+			return false;
+		}
+	}
 
 }
