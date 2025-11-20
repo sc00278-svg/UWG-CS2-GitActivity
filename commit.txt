@@ -1,3 +1,33 @@
+commit 01da34a18e55fdb6d739b949380cc0a972f3901f
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 20 08:51:26 2025 -0500
+
+    last minute fixes
+
+commit b59734d3450a48c8f80c5f2b70accbe5dc38b755
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 20 08:33:28 2025 -0500
+
+    lab 9 disable/enable generate password
+    
+    1) updated the minLength change listener to disable the generate password button if the input in the text feild is not a valid number.
+
+commit b25989188e6959b4923c2a52cc84d910d20d956c
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 20 07:56:29 2025 -0500
+
+    Lab 9 menu bar
+    
+    1) added a menu bar in the codeBehind for lab 9.
+    2) added an about, close, and save to the menu.
+    3) implemented eventHandlers for the menu items.
+
+commit d836dcbbd55c9b9977c6e980f467762cb8e9516b
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 13 12:07:42 2025 -0500
+
+    adding starter for lab 9
+
 commit 0542ad9f644786e78e67ecf9224c5edbe6d27fcc
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Thu Nov 13 08:46:09 2025 -0500
