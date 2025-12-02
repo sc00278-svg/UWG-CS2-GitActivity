@@ -131,11 +131,6 @@ public class MainWindowViewModel {
 			}
 		}
 		
-		//		for (Contact currContact : this.contacts.get()) {
-		//			if (currContact.getName().equals(this.searchCriteria.get()) || currContact.getPhoneNumber().equals(this.searchCriteria.get())) {
-		//				return currContact.toString();
-		//			}
-		//		}
 		return "No contact found.";
 	}
 	
