@@ -1,3 +1,20 @@
+commit 4b932c84f4eb0ddb27886632c89d5c257cfcd76f
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Tue Dec 2 08:39:27 2025 -0500
+
+    Lab 10 Tests
+    
+    1) implemented tests for the addContact and findContact methods
+
+commit bd7bdcce146fee17b721952c9ebe9df9f5fccb07
+Author: Samantha Cook <sc00278@my.westga.edu>
+Date:   Thu Nov 20 12:36:06 2025 -0500
+
+    lab 10 part 1
+    
+    1) updated how the project searches for contacts to use maps.
+    2) project no longer allows for duplicate names or phone numbers for contacts.
+
 commit 01da34a18e55fdb6d739b949380cc0a972f3901f
 Author: Samantha Cook <sc00278@my.westga.edu>
 Date:   Thu Nov 20 08:51:26 2025 -0500
