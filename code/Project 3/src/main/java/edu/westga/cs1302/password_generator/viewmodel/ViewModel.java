@@ -1,13 +1,14 @@
 package edu.westga.cs1302.password_generator.viewmodel;
 
 import java.util.ArrayList;
-import java.util.Random;
 
-import edu.westga.cs1302.password_generator.model.ComicCollections;
+import edu.westga.cs1302.password_generator.model.ComicCollection;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.ListProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
@@ -19,6 +20,60 @@ import javafx.collections.FXCollections;
  */
 public class ViewModel {
 
+	private StringProperty newCollectionName;
+	private ListProperty<ComicCollection> collections;
+	private ObjectProperty<ComicCollection> selectedCollection;
 	
+	/** creates the veiwModel
+	 * 
+	 */
+	public ViewModel() {
+		
+		this.newCollectionName = new SimpleStringProperty("");
+		this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
+		this.collections = new SimpleListProperty<ComicCollection>(
+				FXCollections.observableArrayList(
+						new ArrayList<ComicCollection>()
+				)
+			);
+	}
 	
+	/**gets the list of collections
+	 * 
+	 * @return the list of collections
+	 */
+	public ListProperty<ComicCollection> getCollectionList() {
+		return this.collections;
+	}
+	
+	/**the name of the new collection
+	 * 
+	 * @return the new Collection's name
+	 */
+	public StringProperty getNewCollectionName() {
+		return this.newCollectionName;
+	}
+	
+	/**gets the selected  comic collection
+	 * 
+	 * @return the selected Collection
+	 */
+	public ObjectProperty<ComicCollection> getSelectedCollection() {
+		return this.selectedCollection;
+	}
+	
+	/** adds a new comic collection to the list of collections
+	 * 
+	 */
+	public void addCollection() {
+		ComicCollection comics = new ComicCollection(this.newCollectionName.get());
+		this.collections.add(comics);
+	}
+	
+	/**removes the selected collection from the list
+	 * 
+	 */
+	public void removeSelectedCollection() {
+		this.collections.remove(this.selectedCollection);
+	}
 }

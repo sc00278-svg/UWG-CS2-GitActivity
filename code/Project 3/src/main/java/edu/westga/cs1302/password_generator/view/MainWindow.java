@@ -14,6 +14,8 @@ import javafx.scene.control.TextField;
  */
 public class MainWindow {
 
+	//TODO: email professor about issues with Main.java not compiling
+	
     @FXML private ListView<?> comicCList;
     @FXML private TextField comicCName;
     @FXML private Button addButton;

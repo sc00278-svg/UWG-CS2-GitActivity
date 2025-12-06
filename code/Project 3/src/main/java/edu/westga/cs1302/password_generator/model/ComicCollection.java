@@ -6,10 +6,8 @@ package edu.westga.cs1302.password_generator.model;
  * @author CS 1302
  * @version Fall 2025
  */
-public class ComicCollections {
+public class ComicCollection {
 
-	//TODO: commit before you do anything else
-	
 	private String comicCollectionName;
 	
 	/**creates a comic Collection with the name given
@@ -18,13 +16,21 @@ public class ComicCollections {
 	 * 
 	 * @param comicsName the name of the comic collection
 	 */
-	public ComicCollections(String comicsName) {
+	public ComicCollection(String comicsName) {
 		
 		if (comicsName == null || comicsName.isEmpty()) {
 			throw new IllegalArgumentException("Not a Valid Name");
 		}
 		
 		this.comicCollectionName = comicsName;
+	}
+	
+	/**gets the name of a comic collection.
+	 * 
+	 * @return the name of the comic collection
+	 */
+	public String getComicCollectionName() {
+		return this.comicCollectionName;
 	}
 
 //	private String combineCharacters(ArrayList<Character> passwordCharacters) {
