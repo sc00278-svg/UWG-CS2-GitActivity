@@ -31,7 +31,7 @@ public class MainWindow {
     
     @FXML
 	private void initialize() {
-    	this.comicCName.setText("");
+    	this.comicCName.setText("Collection Name");
     	//this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
     	this.vm = new ViewModel();
     	this.bindComponents();
@@ -58,6 +58,16 @@ public class MainWindow {
     			(event) -> {
     				this.removeCollection();
     			});
+    	
+    	this.comicCName.textProperty().addListener(
+    			(observable, oldV, newV) -> {
+    				if (!this.comicCName.getText().isEmpty()) {
+    					this.addButton.disableProperty().set(false);
+    				} else {
+    					this.addButton.disableProperty().set(true);
+    				}
+    			}
+    			);
    }
 
 	private void removeCollection() {
