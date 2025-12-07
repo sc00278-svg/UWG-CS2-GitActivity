@@ -10,10 +10,10 @@
 
 <AnchorPane minHeight="366.0" minWidth="215.0" prefHeight="366.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.password_generator.view.MainWindow">
    <children>
-      <TextField fx:id="ComicCName" layoutX="23.0" layoutY="68.0" />
+      <TextField fx:id="comicCName" layoutX="23.0" layoutY="68.0" />
       <Label layoutX="58.0" layoutY="35.0" text="New Collection" />
       <Label layoutX="240.0" layoutY="35.0" text="Comic Collections" />
-      <ListView fx:id="ComicCList" layoutX="188.0" layoutY="68.0" prefHeight="200.0" prefWidth="200.0">
+      <ListView fx:id="comicCList" layoutX="188.0" layoutY="68.0" prefHeight="200.0" prefWidth="200.0">
          <contextMenu>
             <ContextMenu fx:id="contextMenu">
               <items>
@@ -27,5 +27,6 @@
          </contextMenu>
       </ListView>
       <Button fx:id="addButton" layoutX="51.0" layoutY="118.0" mnemonicParsing="false" text="Add Collection" />
+      <Button fx:id="removeButtonButton" layoutX="40.0" layoutY="170.0" mnemonicParsing="false" text="Remove Collection" />
    </children>
 </AnchorPane>

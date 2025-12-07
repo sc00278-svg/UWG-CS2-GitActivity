@@ -32,12 +32,10 @@ public class ComicCollection {
 	public String getComicCollectionName() {
 		return this.comicCollectionName;
 	}
+	
+	@Override
+	public String toString() {
+		return this.comicCollectionName;
+	}
 
-//	private String combineCharacters(ArrayList<Character> passwordCharacters) {
-//		String password = "";
-//		for (Character currentChar : passwordCharacters) {
-//			password += currentChar;
-//		}
-//		return password;
-//	}
 }

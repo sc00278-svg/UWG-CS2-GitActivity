@@ -30,19 +30,19 @@ public class ViewModel {
 	public ViewModel() {
 		
 		this.newCollectionName = new SimpleStringProperty("");
-		this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
 		this.collections = new SimpleListProperty<ComicCollection>(
-				FXCollections.observableArrayList(
+				FXCollections.observableList(
 						new ArrayList<ComicCollection>()
 				)
 			);
+		this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
 	}
 	
 	/**gets the list of collections
 	 * 
 	 * @return the list of collections
 	 */
-	public ListProperty<ComicCollection> getCollectionList() {
+	public ListProperty getCollectionList() {
 		return this.collections;
 	}
 	
@@ -73,7 +73,13 @@ public class ViewModel {
 	/**removes the selected collection from the list
 	 * 
 	 */
-	public void removeSelectedCollection() {
-		this.collections.remove(this.selectedCollection);
+	public void removeSelectedCollection() {	
+		ComicCollection comics = this.selectedCollection.get();
+    	if (comics != null) {
+    		this.collections.remove(comics);
+    	} else {
+    		throw new IllegalArgumentException("no collection to remove");
+    	}
+		
 	}
 }
