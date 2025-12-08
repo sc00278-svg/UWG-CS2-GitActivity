@@ -1,5 +1,8 @@
 package edu.westga.cs1302.password_generator.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Generates a random password based on the characteristics required.
  *
@@ -9,6 +12,7 @@ package edu.westga.cs1302.password_generator.model;
 public class ComicCollection {
 
 	private String comicCollectionName;
+	private List<Comic> collection;
 	
 	/**creates a comic Collection with the name given
 	 * 
@@ -23,6 +27,7 @@ public class ComicCollection {
 		}
 		
 		this.comicCollectionName = comicsName;
+		this.collection = new ArrayList<Comic>();
 	}
 	
 	/**gets the name of a comic collection.
@@ -31,6 +36,14 @@ public class ComicCollection {
 	 */
 	public String getComicCollectionName() {
 		return this.comicCollectionName;
+	}
+	
+	/**gets the comics in the collection
+	 * 
+	 * @return the comics in the collection
+	 */
+	public List<Comic> getComics() {
+		return this.collection;
 	}
 	
 	@Override
