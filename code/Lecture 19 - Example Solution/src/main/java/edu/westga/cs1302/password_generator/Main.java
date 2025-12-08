@@ -11,12 +11,12 @@ import javafx.stage.Stage;
 /** Starting point for the project. Launches the main window.
  * 
  * @author CS 1302
- * @version Fall 2025
+ * @version Fall 2024
  */
 public class Main extends Application {
 	private static final String WINDOW_TITLE = "Password Generator";
-	private static final String GUI_RESOURCE = "view/MainWindow.fxml";
-	public static final String ADD_COMIC_WINDOW_RESOURCE = "view/AddComicWindow.fxml";
+	private static final String MAIN_WINDOW_RESOURCE = "view/MainWindow.fxml";
+	public static final String OPTIONS_WINDOW_RESOURCE = "view/OptionsWindow.fxml";
 
 	/**
 	 * JavaFX entry point.
@@ -28,7 +28,7 @@ public class Main extends Application {
 	 */
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		Parent parent = FXMLLoader.load(getClass().getResource(Main.GUI_RESOURCE));
+		Parent parent = FXMLLoader.load(getClass().getResource(Main.MAIN_WINDOW_RESOURCE));
 		Scene scene = new Scene(parent);
 		primaryStage.setTitle(WINDOW_TITLE);
 		primaryStage.setScene(scene);

@@ -30,6 +30,11 @@ public class ComicCollection {
 		this.collection = new ArrayList<Comic>();
 	}
 	
+	
+	public void addComicToCollection(Comic comic) {
+		this.collection.add(comic);
+	}
+	
 	/**gets the name of a comic collection.
 	 * 
 	 * @return the name of the comic collection

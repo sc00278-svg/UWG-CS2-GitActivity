@@ -46,6 +46,6 @@ public class Comic {
 	
 	@Override
 	public String toString() {
-		return this.name + "Issue: " + this.issueNum;
+		return this.name + " Issue: " + this.issueNum;
 	}
 }

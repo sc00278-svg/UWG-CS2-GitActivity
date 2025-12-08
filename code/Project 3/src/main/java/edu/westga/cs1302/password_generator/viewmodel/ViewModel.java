@@ -45,6 +45,8 @@ public class ViewModel {
 			);
 		this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
 		
+		//this.comicsInSelectedCollection = this.selectedCollection.get().getComics();
+		
 		this.name = new SimpleStringProperty("");
 		this.issueNumber = new SimpleIntegerProperty();
 		this.comicsInSelectedCollection = new SimpleListProperty<Comic>(FXCollections.observableList(new ArrayList<Comic>()));
@@ -128,12 +130,19 @@ public class ViewModel {
 		
 	}
 	
-	/** adds comics to the lisst of comics for the selected Collection
+	/** adds comics to the list of comics for the selected Collection
 	 * 
 	 */
 	public void addNewComic() {
-		Comic newComic = new Comic(this.name.get(), this.issueNumber.get());
-		this.comicsInSelectedCollection.add(newComic);
+//		ComicCollection collection = this.selectedCollection.get();
+//		if (collection == null) {
+//			throw new IllegalArgumentException("not collection to add to");
+//		} else {
+			Comic newComic = new Comic(this.name.get(), this.issueNumber.get());
+			this.comicsInSelectedCollection.add(newComic);
+//		}
+		
+//		this.selectedCollection.get().addComicToCollection(new Comic(this.getComicName().get(), this.issueNumber.get()));
 	}
 	
 	/** removes a selected comic from a list of comics in a collection

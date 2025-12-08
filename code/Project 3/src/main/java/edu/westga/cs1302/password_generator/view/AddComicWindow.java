@@ -1,8 +1,12 @@
 package edu.westga.cs1302.password_generator.view;
 
+import edu.westga.cs1302.password_generator.viewmodel.ViewModel;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.util.converter.NumberStringConverter;
 
 /**CodeBehind for adding a Comic to a Collection.
  *
@@ -15,5 +19,50 @@ public class AddComicWindow {
 	 @FXML private Button cancelButton;
 	 @FXML private TextField comicName;
 	 @FXML private TextField issueNum;
+	 
+	 private ViewModel viewM;
 	
+	 @FXML
+	 void initialize() {
+		 this.comicName.setText("");
+		 this.issueNum.setText("");
+		 
+//		 this.addButton.setOnAction((event) -> {
+//			 try {
+//				 if (this.viewM.getSelectedCollection() != null) {
+//					 this.viewM.addNewComic();
+//				 }
+//			 } catch (IllegalArgumentException error) {
+//				 Alert alert = new Alert(AlertType.ERROR);
+//				 alert.setContentText("error: could not add comic");
+//				 alert.showAndWait();
+//			 }
+//		 });
+	 }
+	 
+	 /**sets the viewModel for the window
+	  * 
+	  * @param vM the viewModel
+	  */
+	 public void setViewModel(ViewModel vM) {
+		 if (vM == null) {
+				throw new IllegalArgumentException("veiwModel must not be null");
+			}
+		 this.viewM = vM;
+		 this.comicName.textProperty().bindBidirectional(this.viewM.getComicName());
+		 this.issueNum.textProperty().bindBidirectional(this.viewM.getIssue(), new NumberStringConverter());
+		 
+		 this.addButton.setOnAction((event) -> {
+			 try {
+				 if (this.viewM.getSelectedCollection() != null) {
+					 this.viewM.addNewComic();
+				 }
+			 } catch (IllegalArgumentException error) {
+				 Alert alert = new Alert(AlertType.ERROR);
+				 alert.setContentText("error: could not add comic");
+				 alert.showAndWait();
+			 }
+		 });
+	 }
+	 
 }
