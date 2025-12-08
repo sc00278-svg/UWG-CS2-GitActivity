@@ -43,16 +43,16 @@ public class MainWindow {
     
     private ObjectProperty<Comic> selectedComic;
     private ViewModel vm;
-    private ObjectProperty<ComicCollection> selectedCollection;
+    //private ObjectProperty<ComicCollection> selectedCollection;
     
     @FXML
 	private void initialize() {
     	this.comicCName.setText("Collection Name");
-    	this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
+    	//this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
     	this.selectedComic = new SimpleObjectProperty<Comic>();
     	this.vm = new ViewModel();
     	this.bindComponents();
-    	this.setupChangeListenerListView();
+    	//this.setupChangeListenerListView();
     	
     	this.addButton.setOnAction(
     			(event) -> {
@@ -130,15 +130,15 @@ public class MainWindow {
 		}
 	}
     
-	private void setupChangeListenerListView() {
-		this.comicCList.getSelectionModel().selectedItemProperty()
-				.addListener((observable, oldCollection, newCollection) -> {
-					if (newCollection != null) {
-						this.selectedCollection.set(newCollection);
-						
-					}
-				});
-	}
+//	private void setupChangeListenerListView() {
+//		this.comicCList.getSelectionModel().selectedItemProperty()
+//				.addListener((observable, oldCollection, newCollection) -> {
+//					if (newCollection != null) {
+//						this.selectedCollection.set(newCollection);
+//						
+//					}
+//				});
+//	}
     
     /** binds components to the viewModel
      * 
@@ -146,7 +146,7 @@ public class MainWindow {
     private void bindComponents() {
     	this.vm.getNewCollectionName().bindBidirectional(this.comicCName.textProperty());
     	this.comicCList.setItems(this.vm.getCollectionList());
-    	this.vm.getSelectedCollection().bindBidirectional(this.selectedCollection);
+    	//this.vm.getSelectedCollection().bindBidirectional(this.selectedCollection);
     	this.comicList.setItems(this.vm.getComicsInCollection());;
     	
     }
