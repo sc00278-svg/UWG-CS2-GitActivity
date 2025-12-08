@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="216.0" minWidth="215.0" prefHeight="216.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.westga.cs1302.password_generator.view.AddComicWindow">
+   <children>
+      <Button fx:id="addButton" layoutX="311.0" layoutY="62.0" mnemonicParsing="false" text="Confirm" />
+      <Button fx:id="cancelButton" layoutX="314.0" layoutY="125.0" mnemonicParsing="false" text="Cancel" />
+      <TextField fx:id="comicName" layoutX="134.0" layoutY="62.0" />
+      <TextField fx:id="issueNum" layoutX="134.0" layoutY="125.0" />
+      <Label layoutX="39.0" layoutY="66.0" text="Comic name" />
+      <Label layoutX="45.0" layoutY="129.0" text="Issue number" />
+   </children>
+</AnchorPane>
