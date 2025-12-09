@@ -135,17 +135,14 @@ public class ViewModel {
 	 * 
 	 */
 	public void addNewComic() {
-//		ComicCollection collection = this.selectedCollection.get();
-//		if (this.selectedCollection == null) {
-//			throw new IllegalArgumentException("not collection to add to");
-//		} else {
+		if (this.selectedCollection == null) {
+			throw new IllegalArgumentException("not collection to add to");
+		} else {
 			Comic newComic = new Comic(this.name.get(), this.issueNumber.get());
-			//this.comicsInSelectedCollection.add(newComic);
 			this.selectedCollection.get().addComicToCollection(newComic);
 			this.comicsInSelectedCollection.add(newComic);
-//		}
+		}
 		
-//		this.selectedCollection.get().addComicToCollection(new Comic(this.getComicName().get(), this.issueNumber.get()));
 	}
 	
 	/** removes a selected comic from a list of comics in a collection
@@ -153,7 +150,8 @@ public class ViewModel {
 	 */
 	public void removeComic() {
 		Comic selected = this.selectedComic.get();
-		if (this.selectedComic != null) {
+		if (this.selectedComic.get() != null) {
+			this.selectedCollection.get().removeComicFromCollection(selected);
 			this.comicsInSelectedCollection.remove(selected);
 		} else {
 			throw new IllegalArgumentException("no comic selected to be removed");

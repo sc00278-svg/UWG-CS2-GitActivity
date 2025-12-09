@@ -6,8 +6,6 @@ import edu.westga.cs1302.password_generator.Main;
 import edu.westga.cs1302.password_generator.model.Comic;
 import edu.westga.cs1302.password_generator.model.ComicCollection;
 import edu.westga.cs1302.password_generator.viewmodel.ViewModel;
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -41,18 +39,14 @@ public class MainWindow {
     @FXML private Button comicRemoveButton;
     @FXML private Button addComicButt;
     
-    private ObjectProperty<Comic> selectedComic;
     private ViewModel vm;
-    //private ObjectProperty<ComicCollection> selectedCollection;
-    
+ 
     @FXML
 	private void initialize() {
     	this.comicCName.setText("Collection Name");
-    	//this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
-    	this.selectedComic = new SimpleObjectProperty<Comic>();
     	this.vm = new ViewModel();
     	this.bindComponents();
-    	//this.setupChangeListenerListView();
+    	this.setupChangeListenerListView();
     	
     	this.addButton.setOnAction(
     			(event) -> {
@@ -85,6 +79,7 @@ public class MainWindow {
     	this.removeComic.setOnAction((event) -> {
     				try {
     					this.vm.removeComic();
+    					this.comicList.getItems().remove(this.vm.getSelectedComic());
     					this.comicList.setItems(this.vm.getComicsInCollection());
     				} catch (IllegalArgumentException error) {
     					Alert alert = new Alert(AlertType.ERROR);
@@ -92,7 +87,12 @@ public class MainWindow {
     				alert.showAndWait();
     				}
     			});
-    	this.addComicButt.setOnAction((event) -> {
+    	
+    	this.addComicWindowMethod();
+   }
+
+	private void addComicWindowMethod() {
+		this.addComicButt.setOnAction((event) -> {
     		FXMLLoader loader = new FXMLLoader();
     		loader.setLocation(Main.class.getResource(Main.ADD_COMIC_WINDOW_RESOURCE));
     		try {
@@ -116,11 +116,10 @@ public class MainWindow {
     			alert.showAndWait();
     		}
     	});
-   }
+	}
 
 	private void removeCollection() {
 		try {
-			this.vm.getSelectedCollection().set(this.comicCList.getSelectionModel().getSelectedItem());
 			this.vm.removeSelectedCollection();
 			this.comicCList.setItems(this.vm.getCollectionList());
 		} catch (IllegalArgumentException error) {
@@ -130,15 +129,16 @@ public class MainWindow {
 		}
 	}
     
-//	private void setupChangeListenerListView() {
-//		this.comicCList.getSelectionModel().selectedItemProperty()
-//				.addListener((observable, oldCollection, newCollection) -> {
-//					if (newCollection != null) {
-//						this.selectedCollection.set(newCollection);
-//						
-//					}
-//				});
-//	}
+	private void setupChangeListenerListView() {
+		this.comicCList.getSelectionModel().selectedItemProperty()
+				.addListener((observable, oldCollection, newCollection) -> {
+					if (newCollection != null) {
+						this.comicList.getItems().clear();
+						this.comicList.getItems().addAll(newCollection.getComics());
+						//this.comicList. .comicCList.getSelectionModel().getSelectedItem().getComics();
+					}
+				});
+	}
     
     /** binds components to the viewModel
      * 
@@ -146,9 +146,9 @@ public class MainWindow {
     private void bindComponents() {
     	this.vm.getNewCollectionName().bindBidirectional(this.comicCName.textProperty());
     	this.comicCList.setItems(this.vm.getCollectionList());
-    	//this.vm.getSelectedCollection().bindBidirectional(this.selectedCollection);
-    	this.comicList.setItems(this.vm.getComicsInCollection());;
-    	
+    	this.comicList.setItems(this.vm.getComicsInCollection());
+    	this.vm.getSelectedCollection().bind(this.comicCList.getSelectionModel().selectedItemProperty());
+    	this.vm.getSelectedComic().bind(this.comicList.getSelectionModel().selectedItemProperty());
     }
     
 }

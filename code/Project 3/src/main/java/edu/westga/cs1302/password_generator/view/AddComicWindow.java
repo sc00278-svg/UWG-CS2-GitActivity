@@ -7,6 +7,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.util.converter.NumberStringConverter;
+import javafx.scene.Node;
 
 /**CodeBehind for adding a Comic to a Collection.
  *
@@ -56,12 +57,17 @@ public class AddComicWindow {
 			 try {
 				 if (this.viewM.getSelectedCollection() != null) {
 					 this.viewM.addNewComic();
+					 ((Node) (event.getSource())).getScene().getWindow().hide();
 				 }
 			 } catch (IllegalArgumentException error) {
 				 Alert alert = new Alert(AlertType.ERROR);
 				 alert.setContentText("error: could not add comic");
 				 alert.showAndWait();
 			 }
+		 });
+		 
+		 this.cancelButton.setOnAction((event) -> {
+			 ((Node) (event.getSource())).getScene().getWindow().hide();
 		 });
 	 }
 	 

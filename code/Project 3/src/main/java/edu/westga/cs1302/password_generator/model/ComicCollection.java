@@ -30,9 +30,20 @@ public class ComicCollection {
 		this.collection = new ArrayList<Comic>();
 	}
 	
-	
+	/**adds a comic to the collection
+	 * 
+	 * @param comic the comic being added
+	 */
 	public void addComicToCollection(Comic comic) {
 		this.collection.add(comic);
+	}
+	
+	/** removes the comic from the collection
+	 * 
+	 * @param comic the comic being removed
+	 */
+	public void removeComicFromCollection(Comic comic) {
+		this.collection.remove(comic);
 	}
 	
 	/**gets the name of a comic collection.
