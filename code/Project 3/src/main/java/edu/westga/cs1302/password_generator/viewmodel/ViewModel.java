@@ -1,6 +1,8 @@
 package edu.westga.cs1302.password_generator.viewmodel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import edu.westga.cs1302.password_generator.model.Comic;
 import edu.westga.cs1302.password_generator.model.ComicCollection;
@@ -32,6 +34,10 @@ public class ViewModel {
 	private ListProperty<Comic> comicsInSelectedCollection;
 	private ObjectProperty<Comic> selectedComic;
 	
+	private StringProperty searchCriteria;
+	private Map<String, Comic> IssueNumMap;
+	private Map<String, Comic> comicNameMap;
+	
 	/** creates the veiwModel
 	 * 
 	 */
@@ -52,6 +58,18 @@ public class ViewModel {
 		this.comicsInSelectedCollection = new SimpleListProperty<Comic>(FXCollections.observableList(new ArrayList<Comic>()));
 		//this.comicsInSelectedCollection.addAll(this.selectedCollection.get().getComics());
 		this.selectedComic = new SimpleObjectProperty<Comic>();
+		
+		this.searchCriteria = new SimpleStringProperty("");
+		this.IssueNumMap = new HashMap<String, Comic>();
+		this.comicNameMap = new HashMap<String, Comic>();
+	}
+	
+	/**gets the search criteria for a comic
+	 * 
+	 * @return the search criteria
+	 */
+	public StringProperty getSearchCriteria() {
+		return this.searchCriteria;
 	}
 	
 	/** gets the list of comics in a collection
@@ -155,5 +173,29 @@ public class ViewModel {
 		} else {
 			throw new IllegalArgumentException("no comic selected to be removed");
 		}
+	}
+	
+	/**
+	 * 
+	 */
+	public String findComic() {
+		if (!Comic.checkName(this.searchCriteria.get()) && !Comic.checkIssueNumber(this.searchCriteria.get())) {
+			throw new IllegalArgumentException("Search criteria is not a valid name or issue number");
+		}
+		
+		if (Comic.checkIssueNumber(this.searchCriteria.get())) {
+			Comic com = this.IssueNumMap.get(this.searchCriteria.get());
+			if (com != null) {
+				return com.toString();
+			}
+		}
+		if (Comic.checkName(this.searchCriteria.get())) {
+			Comic com = this.comicNameMap.get(this.searchCriteria.get());
+			if (com != null) {
+				return com.toString();
+			}
+		}
+		
+		return "No contact found.";
 	}
 }
