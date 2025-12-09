@@ -39,6 +39,8 @@ public class MainWindow {
     @FXML private Button comicRemoveButton;
     @FXML private Button addComicButt;
     
+    @FXML private TextField searchCriter;
+    
     private ViewModel vm;
  
     @FXML
