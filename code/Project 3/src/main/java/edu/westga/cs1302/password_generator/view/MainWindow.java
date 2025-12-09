@@ -79,7 +79,29 @@ public class MainWindow {
     			}
     			);
     	
-    	this.removeComic.setOnAction((event) -> {
+    	this.searchButt.setOnAction((event) -> {
+    		try {
+				String info = this.vm.findComic();
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Search Result");
+				alert.setHeaderText(null);
+				alert.setContentText(info);
+				alert.showAndWait();
+			} catch (IllegalArgumentException error) {
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setHeaderText("Error Trying to Find Comic");
+				alert.setContentText(error.getMessage());
+				alert.showAndWait();
+			}
+    	});
+    	
+    	this.removeComic();
+    	
+    	this.addComicWindowMethod();
+   }
+
+	private void removeComic() {
+		this.removeComic.setOnAction((event) -> {
     				try {
     					this.vm.removeComic();
     					this.comicList.getItems().remove(this.vm.getSelectedComic());
@@ -90,9 +112,7 @@ public class MainWindow {
     				alert.showAndWait();
     				}
     			});
-    	
-    	this.addComicWindowMethod();
-   }
+	}
 
 	private void addComicWindowMethod() {
 		this.addComicButt.setOnAction((event) -> {
@@ -142,6 +162,7 @@ public class MainWindow {
 					}
 				});
 	}
+	
     
     /** binds components to the viewModel
      * 
@@ -152,6 +173,7 @@ public class MainWindow {
     	this.comicList.setItems(this.vm.getComicsInCollection());
     	this.vm.getSelectedCollection().bind(this.comicCList.getSelectionModel().selectedItemProperty());
     	this.vm.getSelectedComic().bind(this.comicList.getSelectionModel().selectedItemProperty());
+    	this.searchCriter.textProperty().bindBidirectional(this.vm.getSearchCriteria());
     }
     
 }

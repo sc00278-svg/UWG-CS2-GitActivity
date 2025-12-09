@@ -159,6 +159,9 @@ public class ViewModel {
 			Comic newComic = new Comic(this.name.get(), this.issueNumber.get());
 			this.selectedCollection.get().addComicToCollection(newComic);
 			this.comicsInSelectedCollection.add(newComic);
+			this.comicNameMap.put(this.name.get(), newComic);
+			String numKey = String.valueOf(this.issueNumber.get());
+			this.IssueNumMap.put(numKey, newComic);
 //		}	
 	}
 	
@@ -175,7 +178,7 @@ public class ViewModel {
 		}
 	}
 	
-	/**
+	/** finds comic based on the title or issue number
 	 * 
 	 */
 	public String findComic() {
@@ -196,6 +199,6 @@ public class ViewModel {
 			}
 		}
 		
-		return "No contact found.";
+		return "No comic found.";
 	}
 }
