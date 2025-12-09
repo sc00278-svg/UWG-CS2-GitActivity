@@ -50,6 +50,7 @@ public class ViewModel {
 		this.name = new SimpleStringProperty("");
 		this.issueNumber = new SimpleIntegerProperty();
 		this.comicsInSelectedCollection = new SimpleListProperty<Comic>(FXCollections.observableList(new ArrayList<Comic>()));
+		//this.comicsInSelectedCollection.addAll(this.selectedCollection.get().getComics());
 		this.selectedComic = new SimpleObjectProperty<Comic>();
 	}
 	
@@ -135,10 +136,12 @@ public class ViewModel {
 	 */
 	public void addNewComic() {
 //		ComicCollection collection = this.selectedCollection.get();
-//		if (collection == null) {
+//		if (this.selectedCollection == null) {
 //			throw new IllegalArgumentException("not collection to add to");
 //		} else {
 			Comic newComic = new Comic(this.name.get(), this.issueNumber.get());
+			//this.comicsInSelectedCollection.add(newComic);
+			this.selectedCollection.get().addComicToCollection(newComic);
 			this.comicsInSelectedCollection.add(newComic);
 //		}
 		
