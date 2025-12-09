@@ -50,6 +50,7 @@ public class MainWindow {
     	this.vm = new ViewModel();
     	this.bindComponents();
     	this.setupChangeListenerListView();
+    	this.searchButt.disableProperty().set(true);
     	
     	this.addButton.setOnAction(
     			(event) -> {
@@ -79,6 +80,8 @@ public class MainWindow {
     			}
     			);
     	
+    	this.searchValidation();
+    	
     	this.searchButt.setOnAction((event) -> {
     		try {
 				String info = this.vm.findComic();
@@ -99,6 +102,17 @@ public class MainWindow {
     	
     	this.addComicWindowMethod();
    }
+
+	private void searchValidation() {
+		this.searchCriter.textProperty().addListener(
+    			(observable, oldV, newV) -> {
+    				if (this.searchCriter.getText().isEmpty()) {
+    					this.searchButt.disableProperty().set(true);
+    				} else {
+    					this.searchButt.disableProperty().set(false);
+    				}
+    			});
+	}
 
 	private void removeComic() {
 		this.removeComic.setOnAction((event) -> {
@@ -162,7 +176,6 @@ public class MainWindow {
 					}
 				});
 	}
-	
     
     /** binds components to the viewModel
      * 

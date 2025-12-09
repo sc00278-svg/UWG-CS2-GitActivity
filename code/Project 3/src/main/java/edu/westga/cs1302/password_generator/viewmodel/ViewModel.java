@@ -6,11 +6,9 @@ import java.util.Map;
 
 import edu.westga.cs1302.password_generator.model.Comic;
 import edu.westga.cs1302.password_generator.model.ComicCollection;
-import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.property.SimpleObjectProperty;
@@ -35,7 +33,7 @@ public class ViewModel {
 	private ObjectProperty<Comic> selectedComic;
 	
 	private StringProperty searchCriteria;
-	private Map<String, Comic> IssueNumMap;
+	private Map<String, Comic> issueNumMap;
 	private Map<String, Comic> comicNameMap;
 	
 	/** creates the veiwModel
@@ -51,16 +49,13 @@ public class ViewModel {
 			);
 		this.selectedCollection = new SimpleObjectProperty<ComicCollection>();
 		
-		//this.comicsInSelectedCollection = this.selectedCollection.get().getComics();
-		
 		this.name = new SimpleStringProperty("");
 		this.issueNumber = new SimpleIntegerProperty();
 		this.comicsInSelectedCollection = new SimpleListProperty<Comic>(FXCollections.observableList(new ArrayList<Comic>()));
-		//this.comicsInSelectedCollection.addAll(this.selectedCollection.get().getComics());
 		this.selectedComic = new SimpleObjectProperty<Comic>();
 		
 		this.searchCriteria = new SimpleStringProperty("");
-		this.IssueNumMap = new HashMap<String, Comic>();
+		this.issueNumMap = new HashMap<String, Comic>();
 		this.comicNameMap = new HashMap<String, Comic>();
 	}
 	
@@ -153,16 +148,12 @@ public class ViewModel {
 	 * 
 	 */
 	public void addNewComic() {
-//		if (this.selectedCollection == null) {
-//			throw new IllegalArgumentException("not collection to add to");
-//		} else {
 			Comic newComic = new Comic(this.name.get(), this.issueNumber.get());
 			this.selectedCollection.get().addComicToCollection(newComic);
 			this.comicsInSelectedCollection.add(newComic);
 			this.comicNameMap.put(this.name.get(), newComic);
 			String numKey = String.valueOf(this.issueNumber.get());
-			this.IssueNumMap.put(numKey, newComic);
-//		}	
+			this.issueNumMap.put(numKey, newComic);
 	}
 	
 	/** removes a selected comic from a list of comics in a collection
@@ -180,6 +171,7 @@ public class ViewModel {
 	
 	/** finds comic based on the title or issue number
 	 * 
+	 * @return the comic found
 	 */
 	public String findComic() {
 		if (!Comic.checkName(this.searchCriteria.get()) && !Comic.checkIssueNumber(this.searchCriteria.get())) {
@@ -187,7 +179,7 @@ public class ViewModel {
 		}
 		
 		if (Comic.checkIssueNumber(this.searchCriteria.get())) {
-			Comic com = this.IssueNumMap.get(this.searchCriteria.get());
+			Comic com = this.issueNumMap.get(this.searchCriteria.get());
 			if (com != null) {
 				return com.toString();
 			}

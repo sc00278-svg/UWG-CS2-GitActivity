@@ -28,18 +28,6 @@ public class AddComicWindow {
 		 this.comicName.setText("");
 		 this.issueNum.setText("");
 		 this.addButton.disableProperty().set(true);
-		 
-//		 this.addButton.setOnAction((event) -> {
-//			 try {
-//				 if (this.viewM.getSelectedCollection() != null) {
-//					 this.viewM.addNewComic();
-//				 }
-//			 } catch (IllegalArgumentException error) {
-//				 Alert alert = new Alert(AlertType.ERROR);
-//				 alert.setContentText("error: could not add comic");
-//				 alert.showAndWait();
-//			 }
-//		 });
 	 }
 	 
 	 /**sets the viewModel for the window
