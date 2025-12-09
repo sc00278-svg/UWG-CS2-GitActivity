@@ -40,7 +40,8 @@
       </ListView>
       <Button fx:id="addComicButt" layoutX="47.0" layoutY="354.0" mnemonicParsing="false" text="Add New Comic" />
       <Button fx:id="comicRemoveButton" layoutX="50.0" layoutY="409.0" mnemonicParsing="false" text="Remove Comic" />
-      <Label layoutX="53.0" layoutY="577.0" text="Search for Comic :" />
-      <TextField fx:id="searchCriter" layoutX="213.0" layoutY="573.0" promptText="name or issue number" />
+      <Label layoutX="23.0" layoutY="577.0" text="Search for Comic :" />
+      <TextField fx:id="searchCriter" layoutX="131.0" layoutY="573.0" promptText="name or issue number" />
+      <Button fx:id="searchButt" layoutX="309.0" layoutY="573.0" mnemonicParsing="false" text="Search" />
    </children>
 </AnchorPane>

@@ -40,6 +40,7 @@ public class MainWindow {
     @FXML private Button addComicButt;
     
     @FXML private TextField searchCriter;
+    @FXML private Button searchButt;
     
     private ViewModel vm;
  
