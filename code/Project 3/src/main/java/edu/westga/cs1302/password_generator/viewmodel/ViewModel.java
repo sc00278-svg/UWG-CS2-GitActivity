@@ -135,14 +135,13 @@ public class ViewModel {
 	 * 
 	 */
 	public void addNewComic() {
-		if (this.selectedCollection == null) {
-			throw new IllegalArgumentException("not collection to add to");
-		} else {
+//		if (this.selectedCollection == null) {
+//			throw new IllegalArgumentException("not collection to add to");
+//		} else {
 			Comic newComic = new Comic(this.name.get(), this.issueNumber.get());
 			this.selectedCollection.get().addComicToCollection(newComic);
 			this.comicsInSelectedCollection.add(newComic);
-		}
-		
+//		}	
 	}
 	
 	/** removes a selected comic from a list of comics in a collection

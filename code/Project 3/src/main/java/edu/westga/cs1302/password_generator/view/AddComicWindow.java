@@ -27,6 +27,7 @@ public class AddComicWindow {
 	 void initialize() {
 		 this.comicName.setText("");
 		 this.issueNum.setText("");
+		 this.addButton.disableProperty().set(true);
 		 
 //		 this.addButton.setOnAction((event) -> {
 //			 try {
@@ -65,6 +66,26 @@ public class AddComicWindow {
 				 alert.showAndWait();
 			 }
 		 });
+		 
+		 this.comicName.textProperty().addListener(
+	    			(observable, oldV, newV) -> {
+	    				if (!this.comicName.getText().isEmpty() || !this.issueNum.getText().isEmpty()) {
+	    					this.addButton.disableProperty().set(false);
+	    				} else {
+	    					this.addButton.disableProperty().set(true);
+	    				}
+	    			}
+	    			);
+		 
+		 this.issueNum.textProperty().addListener(
+	    			(observable, oldV, newV) -> {
+	    				if (!this.issueNum.getText().isEmpty()) {
+	    					this.addButton.disableProperty().set(false);
+	    				} else {
+	    					this.addButton.disableProperty().set(true);
+	    				}
+	    			}
+	    			);
 		 
 		 this.cancelButton.setOnAction((event) -> {
 			 ((Node) (event.getSource())).getScene().getWindow().hide();
